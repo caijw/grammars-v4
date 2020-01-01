@@ -20,9 +20,13 @@ LexerAdaptor::setCurrentRuleType(int ruleType) {
 void
 LexerAdaptor::handleBeginArgument() {
 	if (inLexerRule()) {
+		// 如果当前是词法规则
+		// 进入 LexerCharSet 模式
 		pushMode(ANTLRv4Lexer::LexerCharSet);
 		more();
 	} else {
+		// 如果当前是语法规则
+		// 进入 Argument 模式
 		pushMode(ANTLRv4Lexer::Argument);
 	}
 }

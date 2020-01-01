@@ -86,14 +86,14 @@ UNTERMINATED_STRING_LITERAL
    // Certain argument lists, such as those specifying call parameters
    // to a rule invocation, or input parameters to a rule specification
    // are contained within square brackets.
-
+// [ 开头
 BEGIN_ARGUMENT
    : LBrack
    { handleBeginArgument(); }
    ;
    // -------------------------
    // Actions
-
+// { 开头
 BEGIN_ACTION
    : LBrace -> pushMode (Action)
    ;
