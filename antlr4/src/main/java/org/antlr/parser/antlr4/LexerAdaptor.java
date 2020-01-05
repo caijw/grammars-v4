@@ -55,8 +55,8 @@ public abstract class LexerAdaptor extends Lexer {
 	}
 
 	protected void handleEndAction() {
-	    int oldMode = _mode;
-        int newMode = popMode();
+	    int oldMode = _mode; // 这个指的是哪个mode
+        int newMode = popMode(); // 这个指的是哪个mode
         boolean isActionWithinAction = _modeStack.size() > 0
             && newMode == ANTLRv4Lexer.Action
             && oldMode == newMode;
